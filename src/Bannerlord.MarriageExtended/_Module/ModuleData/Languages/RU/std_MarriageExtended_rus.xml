@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="Русский" />
+  </tags>
+  <strings>
+    <!-- Mod Identity -->
+    <string id="MarriageExtendedId" text="MarriageExtended" />
+    <string id="MarriageExtendedLoaded" text="{NAME} загружен" />
+    
+    <!-- Settings Groups -->
+    <string id="MarriageExtended_Marriage" text="Брак" />
+    <string id="MarriageExtended_Barter" text="Торг за брак" />
+    <string id="MarriageExtended_Advanced" text="Дополнительно" />
+    
+    <!-- Marriage Settings -->
+    <string id="MarriageExtended_MinRelations" text="Минимальные отношения для брака" />
+    <string id="MarriageExtended_MinRelationsHint" text="Минимальные отношения между кланами для брака. В базовой игре -50. По умолчанию: -25." />
+    <string id="MarriageExtended_EnableMatrilineal" text="Включить матрилинейный брак" />
+    <string id="MarriageExtended_EnableMatrilinealHint" text="Добавляет опцию матрилинейного брака на экран торга. Матрилинейный означает, что муж присоединяется к клану жены." />
+    
+    <!-- Barter Settings -->
+    <string id="MarriageExtended_MinDowry" text="Минимальное приданое" />
+    <string id="MarriageExtended_MinDowryHint" text="Минимальная стоимость в золоте для брачного торга. По умолчанию: 2500." />
+    <string id="MarriageExtended_BaseMarriageCost" text="Базовая стоимость брака" />
+    <string id="MarriageExtended_BaseMarriageCostHint" text="Базовая стоимость брачных сделок в золоте. Корректируется ценностью героя, рангом клана и отношениями. По умолчанию: 15000." />
+    <string id="MarriageExtended_HeroValueFactor" text="Фактор ценности героя" />
+    <string id="MarriageExtended_HeroValueFactorHint" text="Влияние боевой/лидерской ценности героя на стоимость. 0 = нет эффекта, 1 = полный эффект. По умолчанию: 0.5." />
+    <string id="MarriageExtended_TierDifferenceValue" text="Значение разницы рангов кланов" />
+    <string id="MarriageExtended_TierDifferenceValueHint" text="Стоимость в золоте за разницу рангов кланов. Высший ранг = больше компенсация. По умолчанию: 3000." />
+    <string id="MarriageExtended_CompanionSpouseMultiplier" text="Множитель стоимости супруга-компаньона" />
+    <string id="MarriageExtended_CompanionSpouseMultiplierHint" text="Дополнительный множитель при браке компаньона с лордом. 1.25 = 25% дополнительно. По умолчанию: 1.25." />
+    <string id="MarriageExtended_MatrilinealCostMultiplier" text="Множитель стоимости матрилинейного брака" />
+    <string id="MarriageExtended_MatrilinealCostMultiplierHint" text="Множитель стоимости для матрилинейной опции. Значения меньше 1 снижают стоимость. По умолчанию: 1.0." />
+    
+    <!-- Barter UI -->
+    <string id="MarriageExtended_Matrilineal" text="Матрилинейный брак ({GROOM.NAME} вступает в клан {BRIDE.NAME})" />
+    <string id="MarriageExtended_MatrilinealBlocked" text="Матрилинейный брак (ЗАБЛОКИРОВАНО: {GROOM.NAME} — глава клана)" />
+  </strings>
+</base>

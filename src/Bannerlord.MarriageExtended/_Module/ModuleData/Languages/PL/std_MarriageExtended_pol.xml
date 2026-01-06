@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="Polski" />
+  </tags>
+  <strings>
+    <!-- Mod Identity -->
+    <string id="MarriageExtendedId" text="MarriageExtended" />
+    <string id="MarriageExtendedLoaded" text="{NAME} załadowany" />
+    
+    <!-- Settings Groups -->
+    <string id="MarriageExtended_Marriage" text="Małżeństwo" />
+    <string id="MarriageExtended_Barter" text="Negocjacje małżeńskie" />
+    <string id="MarriageExtended_Advanced" text="Zaawansowane" />
+    
+    <!-- Marriage Settings -->
+    <string id="MarriageExtended_MinRelations" text="Minimalne relacje do małżeństwa" />
+    <string id="MarriageExtended_MinRelationsHint" text="Minimalne relacje między klanami wymagane do małżeństwa. Gra bazowa używa -50. Domyślnie: -25." />
+    <string id="MarriageExtended_EnableMatrilineal" text="Włącz opcję małżeństwa matrylinearnego" />
+    <string id="MarriageExtended_EnableMatrilinealHint" text="Dodaje opcję małżeństwa matrylinearnego do ekranu negocjacji. Matrylinerność oznacza, że mąż dołącza do klanu żony." />
+    
+    <!-- Barter Settings -->
+    <string id="MarriageExtended_MinDowry" text="Minimalny posag" />
+    <string id="MarriageExtended_MinDowryHint" text="Minimalna wartość złota dla negocjacji małżeńskich. Domyślnie: 2500." />
+    <string id="MarriageExtended_BaseMarriageCost" text="Bazowy koszt małżeństwa" />
+    <string id="MarriageExtended_BaseMarriageCostHint" text="Bazowa wartość złota dla transakcji małżeńskich. Dostosowywana przez wartość bohatera, rangę klanu i relacje. Domyślnie: 15000." />
+    <string id="MarriageExtended_HeroValueFactor" text="Współczynnik wartości bohatera" />
+    <string id="MarriageExtended_HeroValueFactorHint" text="Wpływ wartości bojowej/przywódczej bohatera na koszt. 0 = brak efektu, 1 = pełny efekt. Domyślnie: 0.5." />
+    <string id="MarriageExtended_TierDifferenceValue" text="Wartość różnicy rang klanów" />
+    <string id="MarriageExtended_TierDifferenceValueHint" text="Wartość złota za różnicę rang klanów. Wyższa ranga = większa kompensacja. Domyślnie: 3000." />
+    <string id="MarriageExtended_CompanionSpouseMultiplier" text="Mnożnik kosztu małżonka-towarzysza" />
+    <string id="MarriageExtended_CompanionSpouseMultiplierHint" text="Dodatkowy mnożnik kosztów przy ślubie towarzysza z lordem. 1.25 = 25% dodatkowego kosztu. Domyślnie: 1.25." />
+    <string id="MarriageExtended_MatrilinealCostMultiplier" text="Mnożnik kosztu matrylinearnego" />
+    <string id="MarriageExtended_MatrilinealCostMultiplierHint" text="Mnożnik kosztów dla opcji matrylinearnej. Wartości poniżej 1 zmniejszają koszt. Domyślnie: 1.0." />
+    
+    <!-- Barter UI -->
+    <string id="MarriageExtended_Matrilineal" text="Małżeństwo matryliniowe ({GROOM.NAME} dołącza do klanu {BRIDE.NAME})" />
+    <string id="MarriageExtended_MatrilinealBlocked" text="Małżeństwo matryliniowe (ZABLOKOWANE: {GROOM.NAME} jest przywódcą klanu)" />
+  </strings>
+</base>

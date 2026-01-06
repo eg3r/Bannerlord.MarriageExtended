@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="Deutsch" />
+  </tags>
+  <strings>
+    <!-- Mod Identity -->
+    <string id="MarriageExtendedId" text="MarriageExtended" />
+    <string id="MarriageExtendedLoaded" text="{NAME} geladen" />
+    
+    <!-- Settings Groups -->
+    <string id="MarriageExtended_Marriage" text="Heirat" />
+    <string id="MarriageExtended_Barter" text="Heiratshandel" />
+    <string id="MarriageExtended_Advanced" text="Erweitert" />
+    
+    <!-- Marriage Settings -->
+    <string id="MarriageExtended_MinRelations" text="Mindestbeziehung für Heirat" />
+    <string id="MarriageExtended_MinRelationsHint" text="Mindestbeziehung zwischen Klans für eine Heirat. Basisspiel nutzt -50. Standard ist -25." />
+    <string id="MarriageExtended_EnableMatrilineal" text="Matrilineare Heirat aktivieren" />
+    <string id="MarriageExtended_EnableMatrilinealHint" text="Wenn aktiviert, wird eine matrilineare Heiratsoption zum Handelsbildschirm hinzugefügt. Matrilinear bedeutet, dass der Ehemann dem Klan der Ehefrau beitritt." />
+    
+    <!-- Barter Settings -->
+    <string id="MarriageExtended_MinDowry" text="Mindestmitgift" />
+    <string id="MarriageExtended_MinDowryHint" text="Mindestgoldwert für Heiratshandel. Standard ist 2500." />
+    <string id="MarriageExtended_BaseMarriageCost" text="Basis-Heiratskosten" />
+    <string id="MarriageExtended_BaseMarriageCostHint" text="Basisgoldwert für Heiratsgeschäfte. Wird durch Heldenwert, Klanrang und Beziehungen angepasst. Standard ist 15000." />
+    <string id="MarriageExtended_HeroValueFactor" text="Heldenwertfaktor" />
+    <string id="MarriageExtended_HeroValueFactorHint" text="Wie stark der Kampf-/Führungswert des Helden die Heiratskosten beeinflusst. 0 = kein Effekt, 1 = voller Effekt. Standard ist 0.5." />
+    <string id="MarriageExtended_TierDifferenceValue" text="Klanrang-Differenzwert" />
+    <string id="MarriageExtended_TierDifferenceValueHint" text="Goldwert pro Klanrang-Differenz. Höherer Rang des verlorenen Mitglieds = mehr Kompensation. Standard ist 3000." />
+    <string id="MarriageExtended_CompanionSpouseMultiplier" text="Gefährten-Ehepartner-Kostenmultiplikator" />
+    <string id="MarriageExtended_CompanionSpouseMultiplierHint" text="Zusätzlicher Kostenmultiplikator bei Heirat eines Gefährten mit einem Lord. 1.25 = 25% Extrakosten. Standard ist 1.25." />
+    <string id="MarriageExtended_MatrilinealCostMultiplier" text="Matrilineare Heirats-Kostenmultiplikator" />
+    <string id="MarriageExtended_MatrilinealCostMultiplierHint" text="Kostenmultiplikator für matrilineare Option. Werte unter 1 reduzieren Kosten, über 1 erhöhen sie. Standard ist 1.0." />
+    
+    <!-- Barter UI -->
+    <string id="MarriageExtended_Matrilineal" text="Matrilineare Heirat ({GROOM.NAME} tritt {BRIDE.NAME}s Klan bei)" />
+    <string id="MarriageExtended_MatrilinealBlocked" text="Matrilineare Heirat (BLOCKIERT: {GROOM.NAME} ist Klanführer)" />
+  </strings>
+</base>

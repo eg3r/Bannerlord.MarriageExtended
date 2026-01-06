@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="한국어" />
+  </tags>
+  <strings>
+    <!-- Mod Identity -->
+    <string id="MarriageExtendedId" text="결혼 확장" />
+    <string id="MarriageExtendedLoaded" text="{NAME} 로드됨" />
+    
+    <!-- Settings Groups -->
+    <string id="MarriageExtended_Marriage" text="결혼" />
+    <string id="MarriageExtended_Barter" text="결혼 협상" />
+    <string id="MarriageExtended_Advanced" text="고급 설정" />
+    
+    <!-- Marriage Settings -->
+    <string id="MarriageExtended_MinRelations" text="결혼에 필요한 최소 관계" />
+    <string id="MarriageExtended_MinRelationsHint" text="클랜 간 결혼에 필요한 최소 관계. 기본 게임은 -50 사용. 기본값: -25." />
+    <string id="MarriageExtended_EnableMatrilineal" text="데릴사위 결혼 옵션 활성화" />
+    <string id="MarriageExtended_EnableMatrilinealHint" text="활성화하면 협상 화면에 데릴사위 결혼 옵션이 추가됩니다. 데릴사위 결혼은 남편이 아내의 클랜에 합류함을 의미합니다." />
+    
+    <!-- Barter Settings -->
+    <string id="MarriageExtended_MinDowry" text="최소 지참금" />
+    <string id="MarriageExtended_MinDowryHint" text="결혼 협상의 최소 금액. 기본값: 2500." />
+    <string id="MarriageExtended_BaseMarriageCost" text="기본 결혼 비용" />
+    <string id="MarriageExtended_BaseMarriageCostHint" text="결혼 거래의 기본 금액. 영웅 가치, 클랜 등급, 관계에 따라 조정됩니다. 기본값: 15000." />
+    <string id="MarriageExtended_HeroValueFactor" text="영웅 가치 계수" />
+    <string id="MarriageExtended_HeroValueFactorHint" text="영웅의 전투/지휘 가치가 비용에 미치는 영향. 0 = 영향 없음, 1 = 완전 영향. 기본값: 0.5." />
+    <string id="MarriageExtended_TierDifferenceValue" text="클랜 등급 차이 가치" />
+    <string id="MarriageExtended_TierDifferenceValueHint" text="클랜 등급 차이당 금액. 높은 등급 = 더 많은 보상. 기본값: 3000." />
+    <string id="MarriageExtended_CompanionSpouseMultiplier" text="동료 배우자 비용 배율" />
+    <string id="MarriageExtended_CompanionSpouseMultiplierHint" text="동료와 영주 결혼 시 추가 비용 배율. 1.25 = 25% 추가 비용. 기본값: 1.25." />
+    <string id="MarriageExtended_MatrilinealCostMultiplier" text="데릴사위 결혼 비용 배율" />
+    <string id="MarriageExtended_MatrilinealCostMultiplierHint" text="데릴사위 옵션의 비용 배율. 1 미만 값은 비용을 줄입니다. 기본값: 1.0." />
+    
+    <!-- Barter UI -->
+    <string id="MarriageExtended_Matrilineal" text="데릴사위 결혼 ({GROOM.NAME}이(가) {BRIDE.NAME}의 클랜에 합류)" />
+    <string id="MarriageExtended_MatrilinealBlocked" text="데릴사위 결혼 (차단됨: {GROOM.NAME}은(는) 클랜장입니다)" />
+  </strings>
+</base>

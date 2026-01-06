@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData id="繁體中文" name="繁體中文" subtitle_extension="zh-HK" supported_iso="zh-hk,zh-tw,zh-hant" under_development="false">
+  <LanguageFile xml_path="CNt/std_MarriageExtended_zho-HK.xml" />
+</LanguageData>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData id="Türkçe" name="Türkçe" subtitle_extension="tr" supported_iso="tr,tur,tr-tr" under_development="false">
+  <LanguageFile xml_path="TR/std_MarriageExtended_tr.xml" />
+</LanguageData>

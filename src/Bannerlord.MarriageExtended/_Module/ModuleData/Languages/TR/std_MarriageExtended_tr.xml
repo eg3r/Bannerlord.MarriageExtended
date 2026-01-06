@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="Türkçe" />
+  </tags>
+  <strings>
+    <!-- Mod Identity -->
+    <string id="MarriageExtendedId" text="MarriageExtended" />
+    <string id="MarriageExtendedLoaded" text="{NAME} yüklendi" />
+    
+    <!-- Settings Groups -->
+    <string id="MarriageExtended_Marriage" text="Evlilik" />
+    <string id="MarriageExtended_Barter" text="Evlilik Pazarlığı" />
+    <string id="MarriageExtended_Advanced" text="Gelişmiş" />
+    
+    <!-- Marriage Settings -->
+    <string id="MarriageExtended_MinRelations" text="Evlilik için minimum ilişki" />
+    <string id="MarriageExtended_MinRelationsHint" text="Evlilik için gerekli minimum klan ilişkisi. Temel oyun -50 kullanır. Varsayılan: -25." />
+    <string id="MarriageExtended_EnableMatrilineal" text="Anaerkil evlilik seçeneğini etkinleştir" />
+    <string id="MarriageExtended_EnableMatrilinealHint" text="Pazarlık ekranına anaerkil evlilik seçeneği ekler. Anaerkil, kocanın karının klanına katılması anlamına gelir." />
+    
+    <!-- Barter Settings -->
+    <string id="MarriageExtended_MinDowry" text="Minimum çeyiz" />
+    <string id="MarriageExtended_MinDowryHint" text="Evlilik pazarlığı için minimum altın değeri. Varsayılan: 2500." />
+    <string id="MarriageExtended_BaseMarriageCost" text="Temel evlilik maliyeti" />
+    <string id="MarriageExtended_BaseMarriageCostHint" text="Evlilik işlemleri için temel altın değeri. Kahraman değeri, klan seviyesi ve ilişkilere göre ayarlanır. Varsayılan: 15000." />
+    <string id="MarriageExtended_HeroValueFactor" text="Kahraman değer faktörü" />
+    <string id="MarriageExtended_HeroValueFactorHint" text="Kahramanın savaş/liderlik değerinin maliyeti ne kadar etkilediği. 0 = etkisiz, 1 = tam etki. Varsayılan: 0.5." />
+    <string id="MarriageExtended_TierDifferenceValue" text="Klan seviye farkı değeri" />
+    <string id="MarriageExtended_TierDifferenceValueHint" text="Klan seviye farkı başına altın değeri. Yüksek seviye = daha fazla tazminat. Varsayılan: 3000." />
+    <string id="MarriageExtended_CompanionSpouseMultiplier" text="Yoldaş eş maliyet çarpanı" />
+    <string id="MarriageExtended_CompanionSpouseMultiplierHint" text="Bir yoldaşı bir lordla evlendirirken ek maliyet çarpanı. 1.25 = %25 ekstra maliyet. Varsayılan: 1.25." />
+    <string id="MarriageExtended_MatrilinealCostMultiplier" text="Anaerkil evlilik maliyet çarpanı" />
+    <string id="MarriageExtended_MatrilinealCostMultiplierHint" text="Anaerkil seçenek için maliyet çarpanı. 1'in altındaki değerler maliyeti azaltır. Varsayılan: 1.0." />
+    
+    <!-- Barter UI -->
+    <string id="MarriageExtended_Matrilineal" text="Anaerkil Evlilik ({GROOM.NAME}, {BRIDE.NAME}'in klanına katılıyor)" />
+    <string id="MarriageExtended_MatrilinealBlocked" text="Anaerkil Evlilik (ENGELLENDİ: {GROOM.NAME} klan lideri)" />
+  </strings>
+</base>

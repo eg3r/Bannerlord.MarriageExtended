@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="日本語" />
+  </tags>
+  <strings>
+    <!-- Mod Identity -->
+    <string id="MarriageExtendedId" text="婚姻拡張" />
+    <string id="MarriageExtendedLoaded" text="{NAME}を読み込みました" />
+    
+    <!-- Settings Groups -->
+    <string id="MarriageExtended_Marriage" text="結婚" />
+    <string id="MarriageExtended_Barter" text="結婚交渉" />
+    <string id="MarriageExtended_Advanced" text="詳細設定" />
+    
+    <!-- Marriage Settings -->
+    <string id="MarriageExtended_MinRelations" text="結婚に必要な最低関係値" />
+    <string id="MarriageExtended_MinRelationsHint" text="クラン間の結婚に必要な最低関係値。基本ゲームは-50を使用。デフォルト：-25。" />
+    <string id="MarriageExtended_EnableMatrilineal" text="婿入り婚オプションを有効化" />
+    <string id="MarriageExtended_EnableMatrilinealHint" text="有効にすると、交渉画面に婿入り婚オプションが追加されます。婿入り婚とは、夫が妻のクランに加入することを意味します。" />
+    
+    <!-- Barter Settings -->
+    <string id="MarriageExtended_MinDowry" text="最低持参金" />
+    <string id="MarriageExtended_MinDowryHint" text="結婚交渉の最低金額。デフォルト：2500。" />
+    <string id="MarriageExtended_BaseMarriageCost" text="基本結婚費用" />
+    <string id="MarriageExtended_BaseMarriageCostHint" text="結婚取引の基本金額。英雄の価値、クランランク、関係によって調整されます。デフォルト：15000。" />
+    <string id="MarriageExtended_HeroValueFactor" text="英雄価値係数" />
+    <string id="MarriageExtended_HeroValueFactorHint" text="英雄の戦闘/指揮価値が費用に与える影響。0 = 影響なし、1 = 完全影響。デフォルト：0.5。" />
+    <string id="MarriageExtended_TierDifferenceValue" text="クランランク差価値" />
+    <string id="MarriageExtended_TierDifferenceValueHint" text="クランランク差1につきの金額。高ランク = 高補償。デフォルト：3000。" />
+    <string id="MarriageExtended_CompanionSpouseMultiplier" text="仲間配偶者費用倍率" />
+    <string id="MarriageExtended_CompanionSpouseMultiplierHint" text="仲間と領主の結婚時の追加費用倍率。1.25 = 25%追加費用。デフォルト：1.25。" />
+    <string id="MarriageExtended_MatrilinealCostMultiplier" text="婿入り婚費用倍率" />
+    <string id="MarriageExtended_MatrilinealCostMultiplierHint" text="婿入り婚オプションの費用倍率。1未満の値は費用を減少させます。デフォルト：1.0。" />
+    
+    <!-- Barter UI -->
+    <string id="MarriageExtended_Matrilineal" text="婿入り婚（{GROOM.NAME}が{BRIDE.NAME}のクランに加入）" />
+    <string id="MarriageExtended_MatrilinealBlocked" text="婿入り婚（ブロック：{GROOM.NAME}はクラン長です）" />
+  </strings>
+</base>

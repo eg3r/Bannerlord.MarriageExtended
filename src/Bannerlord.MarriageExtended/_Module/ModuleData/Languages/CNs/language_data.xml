@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData id="简体中文" name="简体中文" subtitle_extension="zh-CN" supported_iso="zh,zho,zh-cn,zh-hans" under_development="false">
+  <LanguageFile xml_path="CNs/std_MarriageExtended_zho-CN.xml" />
+</LanguageData>

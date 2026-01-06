@@ -1,0 +1,109 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <!-- ======================= -->
+    <!-- TARGET FRAMEWORKS       -->
+    <!-- ======================= -->
+    <PropertyGroup>
+        <TargetFrameworks>net472;net6</TargetFrameworks>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <Platforms>x64</Platforms>
+        <BuildForWindows>false</BuildForWindows>
+        <BuildForWindowsStore>false</BuildForWindowsStore>
+    </PropertyGroup>
+
+    <!-- Windows (Steam/GOG) -->
+    <PropertyGroup Condition="$(TargetFramework) == 'net472'">
+        <BuildForWindows>true</BuildForWindows>
+    </PropertyGroup>
+    
+    <!-- Windows Store / Xbox Game Pass -->
+    <PropertyGroup Condition="$(TargetFramework) == 'net6'">
+        <BuildForWindowsStore>true</BuildForWindowsStore>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+        <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    </PropertyGroup>
+    
+    <!-- ======================= -->
+    <!-- ASSEMBLY NAMING         -->
+    <!-- ======================= -->
+    <PropertyGroup>
+        <AssemblyName>$(ModuleName).$(GameVersion)</AssemblyName>
+        <Configurations>Stable_Debug;Stable_Release;Beta_Debug;Beta_Release;Debug;Release</Configurations>
+    </PropertyGroup>
+
+    <!-- ======================= -->
+    <!-- GAME VERSION CONSTANTS  -->
+    <!-- Allows #if v1234 in code -->
+    <!-- ======================= -->
+    <PropertyGroup>
+        <GameVersionFlat>$([System.String]::Copy('$(GameVersion)').Replace('.',''))</GameVersionFlat>
+        <GameVersionConstant>v$(GameVersionFlat)</GameVersionConstant>
+        <DefineConstants>$(DefineConstants);$(GameVersionConstant)</DefineConstants>
+    </PropertyGroup>
+
+    <!-- ======================= -->
+    <!-- NUGET PACKAGES          -->
+    <!-- ======================= -->
+    <ItemGroup>
+        <!-- Build Resources & Analyzers -->
+        <PackageReference Include="Bannerlord.BuildResources" Version="$(BuildResourcesVersion)">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Bannerlord.BUTR.Shared" Version="$(BUTRSharedVersion)">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        
+        <!-- Module Loader (multi-version support) -->
+        <PackageReference Include="Bannerlord.ModuleLoader.Injector" Version="$(BUTRModuleLoaderVersion)" />
+        <PackageReference Include="Bannerlord.ModuleManager.Source" Version="$(BUTRModuleManagerVersion)" />
+        
+        <!-- Core Dependencies (compile-only, provided at runtime by game/other mods) -->
+        <PackageReference Include="Bannerlord.ButterLib" Version="$(ButterLibVersion)" IncludeAssets="compile" />
+        <PackageReference Include="Bannerlord.MCM" Version="$(MCMVersion)" IncludeAssets="compile" />
+        <PackageReference Include="Lib.Harmony" Version="$(HarmonyVersion)" IncludeAssets="compile" />
+        <PackageReference Include="Bannerlord.UIExtenderEx" Version="$(UIExtenderExVersion)" IncludeAssets="compile" />
+        
+        <!-- Utility Packages -->
+        <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" IncludeAssets="compile" />
+        
+        <!-- Enable NET5+ Features on NET472 -->
+        <PackageReference Include="IsExternalInit" Version="1.0.3">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Nullable" Version="1.3.1">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Harmony.Extensions" Version="$(HarmonyExtensionsVersion)">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        
+        <!-- Game Reference Assemblies (NuGet - no local game install needed for compilation) -->
+        <PackageReference Include="Bannerlord.ReferenceAssemblies.Core" Version="$(GameVersion).*-*" PrivateAssets="All" />
+        <PackageReference Include="Bannerlord.ReferenceAssemblies.Native" Version="$(GameVersion).*-*" PrivateAssets="All" />
+        <PackageReference Include="Bannerlord.ReferenceAssemblies.StoryMode" Version="$(GameVersion).*-*" PrivateAssets="All" />
+        <PackageReference Include="Bannerlord.ReferenceAssemblies.Sandbox" Version="$(GameVersion).*-*" PrivateAssets="All" />
+    </ItemGroup>
+
+    <!-- ======================= -->
+    <!-- SUBMODULE.XML VARIABLES -->
+    <!-- Extra substitutions for SubModule.xml -->
+    <!-- ======================= -->
+    <ItemGroup>
+        <SubModuleOverrides Include="DisplayName">
+            <Regex>\$displayname\$</Regex>
+            <Replacement>$(DisplayName)</Replacement>
+        </SubModuleOverrides>
+        <SubModuleOverrides Include="MCMVersion">
+            <Regex>\$mcmversion\$</Regex>
+            <Replacement>$(MCMVersion)</Replacement>
+        </SubModuleOverrides>
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData id="Português (Brasil)" name="Português (Brasil)" subtitle_extension="pt-BR" supported_iso="pt,por,pt-br,pt-pt" under_development="false">
+  <LanguageFile xml_path="BR/std_MarriageExtended_por-BR.xml" />
+</LanguageData>

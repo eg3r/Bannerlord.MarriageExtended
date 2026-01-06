@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="Español" />
+  </tags>
+  <strings>
+    <!-- Mod Identity -->
+    <string id="MarriageExtendedId" text="MarriageExtended" />
+    <string id="MarriageExtendedLoaded" text="{NAME} cargado" />
+    
+    <!-- Settings Groups -->
+    <string id="MarriageExtended_Marriage" text="Matrimonio" />
+    <string id="MarriageExtended_Barter" text="Negociación matrimonial" />
+    <string id="MarriageExtended_Advanced" text="Avanzado" />
+    
+    <!-- Marriage Settings -->
+    <string id="MarriageExtended_MinRelations" text="Relaciones mínimas para matrimonio" />
+    <string id="MarriageExtended_MinRelationsHint" text="Relaciones mínimas entre clanes requeridas para el matrimonio. El juego base usa -50. Por defecto: -25." />
+    <string id="MarriageExtended_EnableMatrilineal" text="Habilitar opción de matrimonio matrilineal" />
+    <string id="MarriageExtended_EnableMatrilinealHint" text="Añade una opción de matrimonio matrilineal a la pantalla de negociación. Matrilineal significa que el esposo se une al clan de la esposa." />
+    
+    <!-- Barter Settings -->
+    <string id="MarriageExtended_MinDowry" text="Dote mínima" />
+    <string id="MarriageExtended_MinDowryHint" text="Valor mínimo en oro para la negociación de matrimonio. Por defecto: 2500." />
+    <string id="MarriageExtended_BaseMarriageCost" text="Coste base del matrimonio" />
+    <string id="MarriageExtended_BaseMarriageCostHint" text="Valor base en oro para transacciones matrimoniales. Ajustado por valor del héroe, rango del clan y relaciones. Por defecto: 15000." />
+    <string id="MarriageExtended_HeroValueFactor" text="Factor de valor del héroe" />
+    <string id="MarriageExtended_HeroValueFactorHint" text="Cuánto afecta el valor de combate/liderazgo del héroe al coste. 0 = sin efecto, 1 = efecto completo. Por defecto: 0.5." />
+    <string id="MarriageExtended_TierDifferenceValue" text="Valor de diferencia de rango de clan" />
+    <string id="MarriageExtended_TierDifferenceValueHint" text="Valor en oro por diferencia de rango de clan. Mayor rango = más compensación. Por defecto: 3000." />
+    <string id="MarriageExtended_CompanionSpouseMultiplier" text="Multiplicador de coste para cónyuge compañero" />
+    <string id="MarriageExtended_CompanionSpouseMultiplierHint" text="Multiplicador de coste adicional al casar un compañero con un señor. 1.25 = 25% de coste extra. Por defecto: 1.25." />
+    <string id="MarriageExtended_MatrilinealCostMultiplier" text="Multiplicador de coste matrilineal" />
+    <string id="MarriageExtended_MatrilinealCostMultiplierHint" text="Multiplicador de coste para la opción matrilineal. Valores menores a 1 reducen el coste. Por defecto: 1.0." />
+    
+    <!-- Barter UI -->
+    <string id="MarriageExtended_Matrilineal" text="Matrimonio matrilineal ({GROOM.NAME} se une al clan de {BRIDE.NAME})" />
+    <string id="MarriageExtended_MatrilinealBlocked" text="Matrimonio matrilineal (BLOQUEADO: {GROOM.NAME} es líder del clan)" />
+  </strings>
+</base>

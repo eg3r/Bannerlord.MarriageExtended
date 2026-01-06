@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="简体中文" />
+  </tags>
+  <strings>
+    <!-- Mod Identity -->
+    <string id="MarriageExtendedId" text="婚姻扩展" />
+    <string id="MarriageExtendedLoaded" text="已加载 {NAME}" />
+    
+    <!-- Settings Groups -->
+    <string id="MarriageExtended_Marriage" text="婚姻" />
+    <string id="MarriageExtended_Barter" text="婚姻交易" />
+    <string id="MarriageExtended_Advanced" text="高级设置" />
+    
+    <!-- Marriage Settings -->
+    <string id="MarriageExtended_MinRelations" text="婚姻最低关系要求" />
+    <string id="MarriageExtended_MinRelationsHint" text="家族间允许通婚所需的最低关系。原版游戏使用-50。默认值：-25。" />
+    <string id="MarriageExtended_EnableMatrilineal" text="启用入赘婚姻选项" />
+    <string id="MarriageExtended_EnableMatrilinealHint" text="启用后，在交易界面添加入赘婚姻选项。入赘婚姻意味着丈夫加入妻子的家族。" />
+    
+    <!-- Barter Settings -->
+    <string id="MarriageExtended_MinDowry" text="最低嫁妆" />
+    <string id="MarriageExtended_MinDowryHint" text="婚姻交易的最低金币价值。默认值：2500。" />
+    <string id="MarriageExtended_BaseMarriageCost" text="基础婚姻费用" />
+    <string id="MarriageExtended_BaseMarriageCostHint" text="婚姻交易的基础金币价值。根据英雄价值、家族等级和关系进行调整。默认值：15000。" />
+    <string id="MarriageExtended_HeroValueFactor" text="英雄价值系数" />
+    <string id="MarriageExtended_HeroValueFactorHint" text="英雄的战斗/领导价值对费用的影响程度。0 = 无影响，1 = 完全影响。默认值：0.5。" />
+    <string id="MarriageExtended_TierDifferenceValue" text="家族等级差异价值" />
+    <string id="MarriageExtended_TierDifferenceValueHint" text="每级家族等级差异的金币价值。等级越高 = 补偿越多。默认值：3000。" />
+    <string id="MarriageExtended_CompanionSpouseMultiplier" text="同伴配偶费用倍率" />
+    <string id="MarriageExtended_CompanionSpouseMultiplierHint" text="同伴与领主结婚时的额外费用倍率。1.25 = 额外25%费用。默认值：1.25。" />
+    <string id="MarriageExtended_MatrilinealCostMultiplier" text="入赘婚姻费用倍率" />
+    <string id="MarriageExtended_MatrilinealCostMultiplierHint" text="入赘选项的费用倍率。低于1的值会降低费用。默认值：1.0。" />
+    
+    <!-- Barter UI -->
+    <string id="MarriageExtended_Matrilineal" text="入赘婚姻（{GROOM.NAME}加入{BRIDE.NAME}的家族）" />
+    <string id="MarriageExtended_MatrilinealBlocked" text="入赘婚姻（已阻止：{GROOM.NAME}是家族领袖）" />
+  </strings>
+</base>
