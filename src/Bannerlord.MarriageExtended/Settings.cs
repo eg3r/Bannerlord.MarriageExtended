@@ -55,6 +55,14 @@ namespace MarriageExtended
         [SettingPropertyGroup(HeadingMarriage)]
         public bool EnableMatrilinealOption { get; set; } = true;
 
+        [SettingPropertyBool(
+            displayName: "{=MarriageExtended_ProtectOnlyHeir}Protect Only Heir from Marriage",
+            Order = 2,
+            RequireRestart = false,
+            HintText = "{=MarriageExtended_ProtectOnlyHeirHint}When enabled, prevents marrying off your only adult child (heir). If you have only one adult child, they cannot be married off to another clan. Default is on.")]
+        [SettingPropertyGroup(HeadingMarriage)]
+        public bool ProtectOnlyHeir { get; set; } = true;
+
         // =============================================
         // BARTER SETTINGS
         // =============================================

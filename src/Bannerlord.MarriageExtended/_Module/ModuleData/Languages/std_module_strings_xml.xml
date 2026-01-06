@@ -18,6 +18,8 @@
     <string id="MarriageExtended_MinRelationsHint" text="Minimum clan relations required to allow marriage between clans. Base game uses -50. Default is -25." />
     <string id="MarriageExtended_EnableMatrilineal" text="Enable Matrilineal Marriage Option" />
     <string id="MarriageExtended_EnableMatrilinealHint" text="When enabled, adds a matrilineal marriage option to the barter screen. Matrilineal means the husband joins the wife's clan instead of the default (wife joins husband's clan)." />
+    <string id="MarriageExtended_ProtectOnlyHeir" text="Protect Only Heir from Marriage" />
+    <string id="MarriageExtended_ProtectOnlyHeirHint" text="When enabled, prevents marrying off your only adult child (heir). If you have only one adult child, they cannot be married off to another clan. Default is on." />
     
     <!-- Barter Settings -->
     <string id="MarriageExtended_MinDowry" text="Minimum Marriage Dowry" />

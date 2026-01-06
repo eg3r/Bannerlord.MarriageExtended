@@ -1,3 +1,5 @@
+using System.Linq;
+
 using HarmonyLib;
 
 using MarriageExtended.Barter;
@@ -16,11 +18,20 @@ namespace MarriageExtended.Patches
         /// <summary>
         /// Patches IsSuitableForMarriage to allow player companions to be eligible for marriage.
         /// In vanilla, only heroes with Occupation.Lord can marry. This patch allows companions too.
+        /// Also checks for heir protection to prevent marrying off the only heir.
         /// </summary>
         [HarmonyPatch(typeof(DefaultMarriageModel), nameof(DefaultMarriageModel.IsSuitableForMarriage))]
         [HarmonyPostfix]
         private static void IsSuitableForMarriage_Postfix(Hero maidenOrSuitor, ref bool __result)
         {
+            // Check heir protection - if this hero would leave the player's clan, protect them
+            // This applies to both vanilla lords AND companions
+            if (__result && IsProtectedAsOnlyHeir(maidenOrSuitor))
+            {
+                __result = false;
+                return;
+            }
+
             // If vanilla already said yes, don't change it
             if (__result)
                 return;
@@ -66,6 +77,32 @@ namespace MarriageExtended.Patches
                 return false;
 
             return true;
+        }
+
+        /// <summary>
+        /// Checks if a hero is protected from being married off due to being the only heir.
+        /// Only applies to children of the main hero (player's children).
+        /// </summary>
+        internal static bool IsProtectedAsOnlyHeir(Hero hero)
+        {
+            // Check if protection is enabled
+            if (!(Settings.Instance?.ProtectOnlyHeir ?? true))
+                return false;
+
+            // Only protect player's children
+            if (hero.Father != Hero.MainHero && hero.Mother != Hero.MainHero)
+                return false;
+
+            // Get all adult children of the main hero who are unmarried and alive
+            var mainHeroChildren = Hero.MainHero.Children
+                .Where(c => c.IsAlive && !c.IsChild && c.Spouse == null)
+                .ToList();
+
+            // If this is the only adult unmarried child, protect them
+            if (mainHeroChildren.Count == 1 && mainHeroChildren.Contains(hero))
+                return true;
+
+            return false;
         }
 
         /// <summary>
