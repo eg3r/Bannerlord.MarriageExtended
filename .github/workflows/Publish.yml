@@ -1,0 +1,114 @@
+﻿name: Publish Module
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+env:
+  # Disable the .NET logo in the console output.
+  DOTNET_NOLOGO: true
+  # Disable the .NET first time experience to skip caching NuGet packages and speed up the build.
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  # Disable sending .NET CLI telemetry to Microsoft.
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+jobs:
+  build-module:
+    name: Build Module
+    runs-on: ubuntu-latest
+    outputs:
+      mod_version: ${{ steps.changelog.outputs.mod_version }}
+      mod_description: ${{ steps.changelog.outputs.mod_description }}
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@master
+      with:
+        dotnet-version: |
+          6.x.x
+          8.x.x
+
+    - name: Build MarriageExtended
+      run: |
+        $moduleDir = $PWD.Path + '/bannerlord/Modules/MarriageExtended';
+        $proj = 'src/Bannerlord.MarriageExtended/Bannerlord.MarriageExtended.csproj';
+
+        # Create module structure
+        New-Item -ItemType directory -Force -Path "$moduleDir/bin/Win64_Shipping_Client";
+        New-Item -ItemType directory -Force -Path "$moduleDir/bin/Gaming.Desktop.x64_Shipping_Client";
+        New-Item -ItemType directory -Force -Path "$moduleDir/ModuleData";
+
+        [string[]]$gameversions = Get-Content -Path supported-game-versions.txt;
+        
+        For ($i = 0; $i -le $gameversions.Length - 1; $i++)
+        {
+            $gameversion = $gameversions[$i];
+            $constgameversion = $gameversion.replace(".", "");
+            echo "::group::Build for $gameversion"
+            echo "Start building for gameversion = $gameversion"
+            dotnet build $proj --configuration Release -p:OverrideGameVersion=$gameversion -p:ConstGameVersionWithPrefix="$constgameversion";
+            
+            # Copy built DLLs to module folder
+            Copy-Item "src/Bannerlord.MarriageExtended/bin/Release/net472/Bannerlord.MarriageExtended*.dll" "$moduleDir/bin/Win64_Shipping_Client/";
+            Copy-Item "src/Bannerlord.MarriageExtended/bin/Release/net472/Bannerlord.MarriageExtended*.pdb" "$moduleDir/bin/Win64_Shipping_Client/";
+            Copy-Item "src/Bannerlord.MarriageExtended/bin/Release/net6/Bannerlord.MarriageExtended*.dll" "$moduleDir/bin/Gaming.Desktop.x64_Shipping_Client/";
+            Copy-Item "src/Bannerlord.MarriageExtended/bin/Release/net6/Bannerlord.MarriageExtended*.pdb" "$moduleDir/bin/Gaming.Desktop.x64_Shipping_Client/";
+
+            echo "::endgroup::"
+        }
+
+        # Copy SubModule.xml and ModuleData
+        Copy-Item "src/Bannerlord.MarriageExtended/_Module/SubModule.xml" "$moduleDir/";
+        Copy-Item "src/Bannerlord.MarriageExtended/_Module/ModuleData/*" "$moduleDir/ModuleData/" -Recurse;
+      shell: pwsh
+
+    - name: Install and Run ChangelogParser
+      id: changelog
+      run: |
+        dotnet tool install -g Bannerlord.ChangelogParser
+        vers="$(bannerlord_changelog_parser latestversion -f "$PWD/changelog.txt")"
+        echo "mod_version=$vers" >> $GITHUB_OUTPUT
+        desc="$(bannerlord_changelog_parser fulldescription -f "$PWD/changelog.txt")"
+        echo "mod_description<<EOF" >> $GITHUB_OUTPUT
+        echo "$desc" >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+
+    - name: Upload bannerlord folder
+      uses: actions/upload-artifact@v4
+      with:
+        name: MarriageExtended
+        path: ./bannerlord/
+
+###########################
+#         GITHUB          #
+###########################
+  publish-on-github:
+    needs: ["build-module"]
+    uses: BUTR/workflows/.github/workflows/release-github.yml@master
+    with:
+      mod_id: MarriageExtended
+      mod_version: ${{ needs.build-module.outputs.mod_version }}
+      mod_description: ${{ needs.build-module.outputs.mod_description }}
+      artifact_name: MarriageExtended
+
+###########################
+#          STEAM          #
+###########################
+  publish-on-steam:
+    needs: ["build-module"]
+    uses: BUTR/workflows/.github/workflows/release-steam.yml@master
+    with:
+      workshop_id: ${{ vars.STEAM_WORKSHOP_ID }}
+      mod_id: MarriageExtended
+      mod_description: ${{ needs.build-module.outputs.mod_description }}
+      artifact_name: MarriageExtended
+    secrets:
+      STEAM_LOGIN: ${{ secrets.STEAM_WORKSHOP_LOGIN }}
+      STEAM_PASSWORD: ${{ secrets.STEAM_WORKSHOP_PASSWORD }}
+      STEAM_AUTH_CODE: ${{ secrets.STEAM_WORKSHOP_AUTH_CODE }}

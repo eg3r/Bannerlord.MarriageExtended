@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.0
-Game Versions: v1.2.12
+Game Versions: v1.3.13
 * Initial release
+* Companion marriages - Arrange marriages for your companions (wanderers)
+* Matrilineal marriage option - Groom can join bride's clan instead of vice versa
+* Configurable minimum clan relations for marriage
+* Configurable marriage costs (base cost, hero value factor, tier difference)
+* Full localization support for all 12 game languages
+---------------------------------------------------------------------------------------------------
