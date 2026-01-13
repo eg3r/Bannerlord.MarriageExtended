@@ -1,4 +1,4 @@
-﻿name: Publish Module
+name: Publish Module
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
       mod_description: ${{ steps.changelog.outputs.mod_description }}
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     - name: Setup .NET Core
       uses: actions/setup-dotnet@master
